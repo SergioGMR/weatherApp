@@ -34,7 +34,6 @@ module.exports = {
     // https://eslint.vuejs.org/user-guide/#why-doesn-t-it-work-on-vue-file
     // required to lint *.vue files
     'vue',
-
   ],
 
   globals: {
@@ -59,7 +58,7 @@ module.exports = {
     'one-var': 'off',
     'no-void': 'off',
     'multiline-ternary': 'off',
-
+    'semi': [2, 'never'],
     'import/first': 'off',
     'import/named': 'error',
     'import/namespace': 'error',

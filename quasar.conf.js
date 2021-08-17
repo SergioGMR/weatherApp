@@ -9,6 +9,7 @@
 /* eslint-env node */
 const ESLintPlugin = require('eslint-webpack-plugin')
 const { configure } = require('quasar/wrappers')
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
 
 module.exports = configure(function (ctx) {
   return {
@@ -32,19 +33,25 @@ module.exports = configure(function (ctx) {
     extras: [
       // 'ionicons-v4',
       // 'mdi-v5',
-      // 'fontawesome-v5',
+      'fontawesome-v5',
       // 'eva-icons',
       // 'themify',
       // 'line-awesome',
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
-      'roboto-font', // optional, you are not bound to it
-      'material-icons' // optional, you are not bound to it
+      'roboto-font' // optional, you are not bound to it
+      // 'material-icons' // optional, you are not bound to it
     ],
 
     // Full list of options: https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       vueRouterMode: 'hash', // available values: 'hash', 'history'
+      env: {
+        env: require('dotenv').config().parsed,
+        FLIKR_API_KEY: process.env.FLIKR_API_KEY,
+        OPENWEATHER_API_KEY: process.env.OPENWEATHER_API_KEY,
+        USPLASH_API_KEY: process.env.USPLASH_API_KEY
+      },
 
       // transpile: false,
 
@@ -61,6 +68,9 @@ module.exports = configure(function (ctx) {
 
       // Options below are automatically set depending on the env, set them if you want to override
       // extractCSS: false,
+      extendWebpack (cfg) {
+        cfg.plugins.push(new NodePolyfillPlugin({}))
+      },
 
       // https://v2.quasar.dev/quasar-cli/handling-webpack
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
@@ -72,7 +82,7 @@ module.exports = configure(function (ctx) {
 
     // Full list of options: https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     devServer: {
-      https: false,
+      https: true,
       port: 8080,
       open: true // opens browser window automatically
     },

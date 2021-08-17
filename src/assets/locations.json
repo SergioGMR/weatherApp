@@ -1,0 +1,66 @@
+[
+  {
+    "island": "Gran Canaria",
+    "name": "Las Palmas de Gran Canaria",
+    "location": {
+      "lat": 28.122790,
+      "lon": -15.436092
+    }
+  },
+  {
+    "island": "Tenerife",
+    "name": "Santa Cruz de Tenerife",
+    "location": {
+      "lat": 28.467193,
+      "lon": -16.247334
+    }
+  },
+  {
+    "island": "La Gomera",
+    "name": "San Sebastián de La Gomera",
+    "location": {
+      "lat": 28.091182,
+      "lon": -17.111845
+    }
+  },
+  {
+    "island": "La Palma",
+    "name": "Santa Cruz de La Palma",
+    "location": {
+      "lat": 28.6870421,
+      "lon": -17.7815274
+    }
+  },
+  {
+    "island": "El Hierro",
+    "name": "Villa de Valverde",
+    "location": {
+      "lat": 27.8097785,
+      "lon": -17.9192483
+    }
+  },
+  {
+    "island": "Lanzarote",
+    "name": "Arrecife",
+    "location": {
+      "lat": 28.9712585,
+      "lon": -13.5660184
+    }
+  },
+  {
+    "island": "Fuerteventura",
+    "name": "Puerto del Rosario",
+    "location": {
+      "lat": 28.499361,
+      "lon": -13.8706352
+    }
+  },
+  {
+    "island": "La Graciosa",
+    "name": "Caleta del Sebo",
+    "location": {
+      "lat": 29.231055,
+      "lon": -13.502931
+    }
+  }
+]
